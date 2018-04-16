@@ -8,7 +8,7 @@ Licence URI: http://www.os-templates.com/template-terms
 -->
 <html>
 <head>
-<title>Merciano</title>
+<title>IWWM Photography</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="assets/layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
@@ -63,64 +63,26 @@ Licence URI: http://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="btmspace-50 center" id="pages"> 
+    <div class="btmspace-50 center" id="pages"> 
       <h3 class="btmspace-10">GALERY</h3>
       <p class="nospace">The Journal of Photography</p>
     </div>
+      <?php foreach ($isi as $data) { ?>
     <ul class="nospace clear services">
       <li class="one_quarter first"><a href="#">
-        <figure><img src="assets/images/demo/gallery/001.jpg" width="300" height="300">
-          <figcaption>Exploring the Hidden Paradise of Nusa Penida with Visit Nusa Penida</figcaption>
-        </figure>
-        </a></li>
-      <li class="one_quarter"><a href="#">
-        <figure><img src="assets/images/demo/gallery/002.jpg" width="300" height="200">
-          <figcaption>A Journey to Flores with Compastrip</figcaption>
-        </figure>
-        </a></li>
-      <li class="one_quarter"><a href="#">
-        <figure><img src="assets/images/demo/gallery/003.jpg" width="300" height="200">
-          <figcaption>Wonderful Indonesia</figcaption>
-        </figure>
-        </a></li>
-      <li class="one_quarter"><a href="#">
-        <figure><img src="assets/images/demo/gallery/004.jpg" width="300" height="200">
-          <figcaption>Road Trip in South Turkey with @qatarairways & @sorstravel</figcaption>
-        </figure>
-        </a></li>
-      <li class="one_quarter first"><a href="#">
-        <figure><img src="assets/images/demo/gallery/005.jpg" width="300" height="200">
-          <figcaption>One Day at Sthala, A Tribute Portfolio Hotel</figcaption>
-        </figure>
-        </a></li>
-      <li class="one_quarter"><a href="#">
-        <figure><img src="assets/images/demo/gallery/006.jpg" width="300" height="200">
-          <figcaption>Exploring The Blue Paradise, Maldives with @maldiveslowbudget</figcaption>
-        </figure>
-        </a></li>
-      <li class="one_quarter"><a href="#">
-        <figure><img src="assets/images/demo/gallery/007.jpg" width="300" height="200">
-          <figcaption>Central Bali Adventure</figcaption>
-        </figure>
-        </a></li>
-      <li class="one_quarter"><a href="#">
-        <figure><img src="assets/images/demo/gallery/008.jpg" width="300" height="300">
-          <figcaption>Exploring Nusa Penida with Visit Nusa Penida</figcaption>
+        <figure><img src="<?php echo base_url('images/'.$data['img']); ?>" width="300" height="300">
+          <figcaption><?php echo $data['judul']; ?></figcaption>
         </figure>
         </a></li>
     </ul>
-    <p class="center"><a class="btn inverse" href="#">Ornare scelerisque</a></p>
-    <!-- ################################################################################################ -->
-    <!-- / main body -->
+      <?php } ?>
+    <p class="center"><a class="btn inverse" href="<?php echo site_url('coba/add_data')?>">Tambah Gambar</a></p>
+    
     <div class="clear"></div>
   </main>
 </div>
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
 <div class="wrapper bgded overlay" style="background-image:url('assets/images/demo/backgrounds/02.jpg');">
   <div class="hoc container clear"> 
-    <!-- ################################################################################################ -->
     <div class="testimonial clear" id="aboutme">
       <blockquote>Wahyu Mahendra (@iwwm) is a photographer based in Bali, Indonesia. Wahyu's lifestyle as a travel and photographer makes him an attractive and exciting options for brands looking for adventure, travel and lifestyle content! His ability to craft a story in a creative and compelling way is what makes him an asset to any brand.</blockquote>
       <figure><img class="circle" src="assets/images/demo/gallery/11.jpg" alt="">
@@ -146,33 +108,23 @@ Licence URI: http://www.os-templates.com/template-terms
       <article class="clear">
         <?php foreach ($isi as $data) { ?>
         <div class="one_half first"><a class="iblock borderedbox inspace-10" href="#">
-          <img src="<?php echo base_url('assets/images/demo/gallery/'.$data['img']); ?>" alt=""></a></div>
+          <img src="<?php echo base_url('images/'.$data['img']); ?>" alt=""></a></div>
         <div class="one_half">
-          <h3 class="heading"><?php echo $data['caption']; ?></h3>
+          <h3 class="heading"><?php echo $data['judul']; ?></h3>
           <ul class="nospace meta">
             <li>
               <time datetime="<?php echo $data['tgl']; ?>">10<sup>th</sup> Februari 2018</time>
             </li>
             <li>by <a href="#">Admin</a></li>
           </ul>
-          <p><?php echo $data['judul']; ?> &hellip;</p>
-          <footer><a class="btn" href="#">Read More</a></footer>
+          <p><?php echo $data['caption']; ?> &hellip;</p>
+          <p>
+            <footer><a class="btn" href="<?php echo base_url()."coba/do_preview/".$data['id']; ?>">Read More</a></footer>
+          </p>
+          <p>&nbsp;</p>
+          <p>&nbsp;  </p>
         </div>
         <?php } ?>
-      </article>
-      <article class="clear">
-        <div class="one_half first">
-          <h3 class="heading">Aliquam vel quisque nec dolor ullamcorper lacinia ut nec dictum ipsum</h3>
-          <ul class="nospace meta">
-            <li>
-              <time datetime="2045-04-05">5<sup>th</sup> April 2045</time>
-            </li>
-            <li>by <a href="#">Admin</a></li>
-          </ul>
-          <p>Sed vulputate mauris proin fermentum vitae diam non hendrerit vivamus pharetra interdum augue ut dignissim aenean placerat lectus ullamcorper malesuada sodales massa urna pulvinar&hellip;</p>
-          <footer><a class="btn" href="#">Read More</a></footer>
-        </div>
-        <div class="one_half"><a class="iblock borderedbox inspace-10" href="#"><img src="images/demo/540x333.png" alt=""></a></div>
       </article>
     </div>
     <!-- ################################################################################################ -->
@@ -259,7 +211,7 @@ Licence URI: http://www.os-templates.com/template-terms
 <script src="assets/layout/scripts/jquery.min.js"></script>
 <script src="assets/layout/scripts/jquery.backtotop.js"></script>
 <script src="assets/layout/scripts/jquery.mobilemenu.js"></script>
-<script src="assets/http://maps.google.com/maps/api/js?sensor=false"></script>
+<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
 <script src="assets/layout/scripts/gmaps.js"></script>
 </body>
 </html>
