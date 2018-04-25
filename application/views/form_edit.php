@@ -18,6 +18,8 @@ Licence URI: http://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
+<?php echo validation_errors(); ?>
+<?php echo form_open('form'); ?>
 <!-- Top Background Image Wrapper -->
 <div class="bgded overlay" style="background-image:url(<?php echo base_url('assets/images/demo/backgrounds/01.jpg')?>);"> 
   <!-- ################################################################################################ -->
@@ -28,20 +30,20 @@ Licence URI: http://www.os-templates.com/template-terms
   <h2>Add Gambar</h2>
     <?php echo form_open_multipart('coba/do_update')?>
   <form>
-    <input type="hidden" name="id" value="<?php echo $id; ?>">
+    <input type="hidden" name="id" value="<?php echo set_value('id')">
     <div class="form-group">
       <label for="judul">Judul</label>
-      <input type="text" class="btn btn-default" placeholder="Judul" name="judul" value="<?php echo $judul; ?>">
+      <input type="text" class="btn btn-default" placeholder="Judul" name="judul" value="<?php echo set_value('judul')">
     </div>
     <br>
     <div class="form-group">
       <label for="judul">Tempat</label>
-      <input type="text" class="btn btn-default" placeholder="Tempat" name="tempat" value="<?php echo $tempat; ?>">
+      <input type="text" class="btn btn-default" placeholder="Tempat" name="tempat" value="<?php echo set_value('tempat')">
     </div>
     <br>
     <div class="form-group">
       <label for="judul">Tanggal</label>
-      <input type="date" class="btn btn-default" name="tgl" value="<?php echo $tgl; ?>">
+      <input type="date" class="btn btn-default" name="tgl" value="<?php echo set_value('tgl')">
     </div>
     <br>
     <div class="form-group">
