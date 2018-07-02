@@ -104,6 +104,44 @@ if($this->form_validation->run() === FALSE){
         $data['page_title'] = 'Tulis Artikel';
 
 
+// Log in user
+public function login(){
+    $data['page_title'] = 'Log In';
+   ...
+    if($user_id){
+        // Buat session
+        $user_data = array(
+            'user_id' => $user_id,
+            'username' => $username,
+            'logged_in' => true,
+            'level' => $this->user_model->get_user_level($user_id)
+        );
+
+        $this->session->set_userdata($user_data);
 
 
-}}
+
+}
+
+  // Dashboard
+    public function dashboard(){
+
+        if(!$this->session->userdata('logged_in')){
+            redirect('user/login');
+        }
+
+        $username = $this->session->userdata('username');
+
+        // Dapatkan detail user
+        $data['user'] = $this->user_model->get_user_details( $username );
+
+        // Load dashboard
+        $this->load->view('templates/header');
+        $this->load->view('users/dashboard', $data);
+        $this->load->view('templates/footer');
+    }
+
+
+
+
+}
