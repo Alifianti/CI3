@@ -50,9 +50,8 @@ class Coba extends CI_Controller {
             $judul 			= $_POST['judul'];
 			$tgl			= date("Y-m-d H:i:s");
 			$tempat 		= $_POST['tempat'];
-			$caption			= $_POST['caption'];
+			$caption		= $_POST['caption'];
 			$img			= $this->upload->data('file_name');
-			
 			$data_insert	= array(
 									'judul' 	=> $judul,
 									'tgl'		=> $tgl,
